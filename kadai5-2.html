@@ -12,8 +12,9 @@
     
     <div id="result"></div>
     <script>
-        async function some_api(myForm) {
-            // ここにコードを書く
+        async function some_api(myForm) {// ここにコードを書く↓
+            const apiURL = "https://api.thecatapi.com/v1/images/search";
+ 
             document.getElementById("result").innerHTML += myForm.form_data.value+"<br />";
             document.apiform.reset();
         }
