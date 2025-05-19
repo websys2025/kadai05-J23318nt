@@ -12,8 +12,20 @@
     
     <div id="result"></div>
     <script>
-        async function some_api(myForm) {
-            // ここにコードを書く
+        async function some_api(myForm) {// ここにコードを書く↓
+            const apiURL = "https://api.thecatapi.com/v1/images/search";
+             try {
+            const response = await fetch(apiURL);
+            const data = await response.json();
+            const imageUrl = data[0].url;
+
+        　　document.getElementById("result").innerHTML = `
+                <p>ランダムな猫画像：</p>
+                <img src="${imageUrl}" alt="Cat Image" width="300" />
+            `;
+　　　　　} catch (error) {
+            document.getElementById("result").innerHTML = `エラーが発生しました：${error}`;
+        }
             document.getElementById("result").innerHTML += myForm.form_data.value+"<br />";
             document.apiform.reset();
         }
