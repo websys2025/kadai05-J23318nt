@@ -17,6 +17,13 @@
             const zipcode = myForm.zipcode.value.trim();
             const url = `${endpoint}?zipcode=${zipcode}`;
 
+            try {
+            const response = await fetch(url);
+            const data = await response.json();
+
+
+            
+
             
 
             // zipcloudのAPI呼び出して結果を表示する
