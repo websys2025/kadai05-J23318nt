@@ -19,6 +19,12 @@
             const data = await response.json();
             const imageUrl = data[0].url;
 
+        　　document.getElementById("result").innerHTML = `
+                <p>ランダムな猫画像：</p>
+                <img src="${imageUrl}" alt="Cat Image" width="300" />
+            `;
+
+
  
             document.getElementById("result").innerHTML += myForm.form_data.value+"<br />";
             document.apiform.reset();
